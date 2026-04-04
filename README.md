@@ -8,18 +8,10 @@
 
 ## 🛠️ Technologies & Tools
 
-- **Languages:** Java, Python
-- **Frameworks:** Spring Framework, Springboot, Flask
+- **Languages:** Java
+- **Frameworks:** Spring Framework, Springboot
 - **Databases:** MySQL, Apache Cassandra, AWS RDS, AWS S3
 - **Tools:** VS Code, GitHub, TeamCity, JIRA, Grafana, Prometheus, GitHub Actions, Confluence, AWS EKS, AWS EC2, Docker, Kubernetes, Helm, Apache Kafka, Linux
-
----
-
-## 📈 GitHub Stats
-
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=Ayantika19&show_icons=true&theme=radical)
-
----
 
 <!-- ## 🚀 Projects
 
