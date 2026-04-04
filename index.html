@@ -4,88 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayantika Sarkar | Cloud Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0f1a;
+            --card: #161b2c;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; transition: all 0.2s ease-in-out; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
+
+        /* Header / Hero Section */
+        header {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -2px; }
+        .tagline { font-size: 1.25rem; color: var(--text-muted); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .links { margin-top: 30px; display: flex; justify-content: center; gap: 25px; }
+        .links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .links a:hover { color: var(--accent); transform: translateY(-2px); }
+
+        /* Metrics Bar */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: -40px;
+        }
+
+        .metric-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .metric-card h3 { font-size: 2.2rem; margin: 0; color: var(--accent); font-weight: 800; }
+        .metric-card p { margin: 5px 0 0; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+
+        /* Content Sections */
+        section { margin: 60px 0; }
+        h2 { font-size: 1.8rem; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; }
+        h2 i { color: var(--accent); font-size: 1.4rem; }
+
+        .content-card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 25px;
+        }
+
+        /* Experience Timeline */
+        .exp-item { border-left: 2px solid #334155; padding-left: 25px; position: relative; margin-bottom: 40px; }
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .exp-header h3 { margin: 0; font-size: 1.3rem; color: var(--text); }
+        .exp-header span { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+
+        /* Tech Stack Chips */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .skill-box { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; }
+        .skill-box h4 { margin: 0 0 15px; color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chips span {
+            background: #1e293b;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+        }
+
+        footer { text-align: center; padding: 80px 0; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .exp-header { flex-direction: column; }
+            .metrics { grid-template-columns: 1fr; margin-top: 20px; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="container hero">
-            <div class="badge">Available for UK/Ireland Opportunities</div>
-            <h1>Ayantika Sarkar</h1>
-            <p class="tagline">Cloud Software Engineer specializing in Security & High-Performance Systems</p>
-            <div class="header-links">
-                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/ayantika19" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <div class="container">
+            <div class="status-badge">Exploration: UK & Ireland Tech Ecosystem</div> <h1>Ayantika Sarkar</h1>
+            <p class="tagline">Cloud Software Engineer with 4+ years of expertise in Security, Backend Optimization, and Scalable Architectures.</p> <div class="links">
+                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a> <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> <a href="https://github.com/ayantika19" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section class="card">
-            <h2><i class="fas fa-user-circle"></i> About Me</h2>
-            <p>Organized, dedicated, and ambitious Cloud Software Engineer with 4+ years of experience[cite: 5]. I specialize in optimizing detection engines and backend APIs, with a strong academic background in Software Security from BITS Pilani[cite: 8, 41].</p>
-        </section>
-
-        <div class="stats-grid">
-            <div class="stat-card">
+    <div class="container">
+        <div class="metrics">
+            <div class="metric-card">
                 <h3>60%</h3>
-                <p>Reduction in Operational Costs [cite: 8]</p>
-            </div>
-            <div class="stat-card">
+                <p>Operational Cost Cut</p> </div>
+            <div class="metric-card">
                 <h3>70%</h3>
-                <p>Search API Speedup [cite: 12]</p>
-            </div>
-            <div class="stat-card">
+                <p>Search API Speedup</p> </div>
+            <div class="metric-card">
                 <h3>40%</h3>
-                <p>Data Loss Reduction [cite: 16]</p>
-            </div>
+                <p>Data Loss Reduction</p> </div>
         </div>
 
-        <section class="card">
-            <h2><i class="fas fa-briefcase"></i> Experience</h2>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>Cloud Software Engineer | Trellix</h3>
-                    <span>2021 – Present [cite: 14, 15]</span>
+        <section id="experience">
+            <h2><i class="fas fa-bolt"></i> Professional Impact</h2>
+            <div class="content-card">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Cloud Software Engineer | Trellix</h3> <span>Mar 2024 – Present</span> </div>
+                    <ul>
+                        <li>Optimized detection engine efficiency by developing a high-performance pre-filter.</li>
+                        <li>Mentored 3 interns on Java/Spring development and Git best practices.</li>
+                        <li>Increased overall efficiency of the EDR detection funnel by 35%.</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li>Optimized EDR detection funnel efficiency by 35%[cite: 9].</li>
-                    <li>Developed high-performance pre-filters cutting overhead by 60%[cite: 8].</li>
-                    <li>Mentored 3 interns on Java/Spring and Git workflows[cite: 9].</li>
-                </ul>
-            </div>
-        </section>
 
-        <section class="card">
-            <h2><i class="fas fa-tools"></i> Tech Stack</h2>
-            <div class="skill-group">
-                <h3>Backend & Messaging</h3>
-                <div class="chips">
-                    <span>Java/J2EE [cite: 55]</span><span>Spring Boot [cite: 55]</span><span>Apache Kafka [cite: 55]</span><span>REST APIs [cite: 55]</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h3>Cloud & Infrastructure</h3>
-                <div class="chips">
-                    <span>AWS (EKS, S3, EC2) [cite: 58]</span><span>Kubernetes [cite: 56]</span><span>Docker [cite: 56]</span><span>ArgoCD [cite: 56]</span>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Associate Cloud Software Engineer | Trellix</h3> <span>Aug 2021 – Mar 2024</span> </div>
+                    <ul>
+                        <li>Improved response time for search APIs by 70% through backend optimizations.</li>
+                        <li>Implemented Linux and MacOS supportability within the EDR detection funnel.</li>
+                        <li>Served as Scrum Master for a cross-functional team of 20 employees.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="card">
-            <h2><i class="fas fa-book"></i> Publications</h2>
-            <div class="project-item">
-                <h3>ML for Network Security [cite: 26]</h3>
-                <p>A comprehensive review of Machine Learning algorithms used to improvise network security protocols[cite: 28].</p>
+        <section id="tech">
+            <h2><i class="fas fa-code"></i> Tech Stack</h2>
+            <div class="content-card">
+                <div class="skills-grid">
+                    <div class="skill-box">
+                        <h4>Backend & Engineering</h4>
+                        <div class="chips">
+                            <span>Java/J2EE</span><span>Spring Framework</span><span>SpringBoot</span><span>Apache Kafka</span><span>REST API</span> </div>
+                    </div>
+                    <div class="skill-box">
+                        <h4>Cloud & DevOps</h4>
+                        <div class="chips">
+                            <span>AWS (EKS, S3, EC2)</span><span>Docker</span><span>Kubernetes</span><span>ArgoCD</span><span>TeamCity</span> </div>
+                    </div>
+                    <div class="skill-box">
+                        <h4>Security & Monitoring</h4>
+                        <div class="chips">
+                            <span>EDR</span><span>YARA Tool</span><span>OCSF</span><span>MITRE ATT&CK</span><span>Prometheus</span> </div>
+                    </div>
+                </div>
             </div>
         </section>
-    </main>
+
+        <section id="academic">
+            <h2><i class="fas fa-graduation-cap"></i> Academic & Research</h2>
+            <div class="content-card">
+                <div class="exp-header">
+                    <h3>MTech in Software Systems (Security)</h3> <span>BITS Pilani | CGPA 7.98</span> </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">
+                    Publication: "Literature Review of Machine Learning Algorithms for Improving Network Security" (Jan 2024).
+                </p>
+            </div>
+        </section>
+    </div>
 
     <footer>
-        <p>Built with ❤️ by Ayantika Sarkar | 2026</p>
+        <p>&copy; 2026 Ayantika Sarkar. Built for performance and security.</p>
     </footer>
 
 </body>
