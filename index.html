@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayantika Sarkar | Cloud Software Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <style>
         :root {
-            --bg: #0b0f1a;
-            --card: #161b2c;
+            --bg: #030712;
+            --card: rgba(17, 24, 39, 0.8);
+            --card-border: rgba(255, 255, 255, 0.08);
             --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.4);
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
 
-        * { box-sizing: border-box; transition: all 0.2s ease-in-out; }
-
+        * { box-sizing: border-box; transition: all 0.3s ease; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
@@ -27,243 +28,248 @@
             line-height: 1.6;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
 
-        /* Header / Hero Section */
-        header {
-            padding: 100px 0 60px;
-            text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, #0b0f1a 100%);
+        /* Animated Background */
+        .glow {
+            position: fixed;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: -1; border-radius: 50%;
         }
 
+        header { padding: 100px 0 60px; text-align: center; }
+        
         .status-badge {
             display: inline-block;
-            padding: 6px 16px;
+            padding: 8px 20px;
             background: rgba(59, 130, 246, 0.1);
             color: var(--accent);
-            border-radius: 50px;
+            border-radius: 100px;
             font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--accent);
+            font-weight: 700;
+            border: 1px solid rgba(59, 130, 246, 0.3);
             margin-bottom: 25px;
-            letter-spacing: 0.5px;
         }
 
-        h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -2px; }
-        .tagline { font-size: 1.25rem; color: var(--text-muted); margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        h1 { font-size: clamp(2.5rem, 7vw, 4rem); margin: 0; font-weight: 800; letter-spacing: -2px; }
+        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .tagline { font-size: 1.2rem; color: var(--text-muted); margin: 20px auto; max-width: 800px; }
 
-        .links { margin-top: 30px; display: flex; justify-content: center; gap: 25px; }
-        .links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 1.1rem; }
-        .links a:hover { color: var(--accent); transform: translateY(-2px); }
-
-        /* Metrics Bar */
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: -40px;
+        .links { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .links a {
+            padding: 12px 25px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        .links a:hover { border-color: var(--accent); transform: translateY(-3px); }
 
+        /* Metrics */
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
         .metric-card {
             background: var(--card);
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
         }
+        .metric-card h3 { font-size: 2.5rem; margin: 0; color: var(--accent); font-weight: 800; }
+        .metric-card p { margin: 5px 0 0; color: var(--text-muted); font-size: 0.9rem; }
 
-        .metric-card h3 { font-size: 2.2rem; margin: 0; color: var(--accent); font-weight: 800; }
-        .metric-card p { margin: 5px 0 0; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
-
-        /* Content Sections */
-        section { margin: 60px 0; }
+        /* Section Styling */
+        section { margin: 80px 0; }
         h2 { font-size: 1.8rem; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; }
-        h2 i { color: var(--accent); font-size: 1.4rem; }
+        h2 i { color: var(--accent); }
 
-        .content-card {
+        .glass-card {
             background: var(--card);
-            padding: 35px;
+            padding: 40px;
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 25px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
         }
 
         /* Experience Timeline */
-        .exp-item { border-left: 2px solid #334155; padding-left: 25px; position: relative; margin-bottom: 40px; }
+        .exp-item { border-left: 2px solid rgba(59, 130, 246, 0.3); padding-left: 25px; position: relative; margin-bottom: 40px; }
         .exp-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-glow);
+            content: ''; position: absolute; left: -9px; top: 5px;
+            width: 16px; height: 16px; background: var(--accent);
+            border-radius: 50%; box-shadow: 0 0 15px var(--accent);
         }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; }
+        .exp-header h3 { margin: 0; font-size: 1.3rem; color: #fff; }
+        .exp-header span { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
 
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        .exp-header h3 { margin: 0; font-size: 1.3rem; color: var(--text); }
-        .exp-header span { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
-
-        /* Tech Stack Chips */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .skill-box { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; }
-        .skill-box h4 { margin: 0 0 15px; color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        /* Tech Grid */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .tech-box { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid var(--card-border); }
+        .tech-box h4 { margin: 0 0 15px; color: var(--text-muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1.5px; }
         
-        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
         .chips span {
-            background: #1e293b;
-            padding: 6px 14px;
-            border-radius: 10px;
+            background: rgba(59, 130, 246, 0.05);
+            padding: 6px 12px;
+            border-radius: 8px;
             font-size: 0.85rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #cbd5e1;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; gap: 6px;
         }
 
-        footer { text-align: center; padding: 80px 0; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { text-align: center; padding: 60px 0; color: var(--text-muted); border-top: 1px solid var(--card-border); }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .exp-header { flex-direction: column; }
-            .metrics { grid-template-columns: 1fr; margin-top: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="glow" style="top: -10%; right: -10%;"></div>
+    <div class="glow" style="bottom: 10%; left: -10%; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);"></div>
+
     <header>
         <div class="container">
-            <div class="status-badge">Exploration: India, UK & Ireland Tech Ecosystem</div> <h1>Ayantika Sarkar</h1>
-            <p class="tagline">Cloud Software Engineer with 4.5+ years of expertise in Security, Backend Optimization, and Scalable Architectures.</p> <div class="links">
-                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a> <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> <a href="https://github.com/ayantika19" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <div class="status-badge"><i class="fas fa-rocket"></i> Open to UK & Ireland Opportunities</div>
+            <h1>Ayantika <span class="gradient-text">Sarkar</span></h1>
+            <p class="tagline">Cloud Software Engineer with 4.5+ years of experience. Expert in high-performance Java backends, cloud-native security, and optimizing detection engines at scale.</p>
+            <div class="links">
+                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/ayantika19" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="metrics">
-            <div class="metric-card">
-                <h3>60%</h3>
-                <p>Operational Cost Cut</p> </div>
-            <div class="metric-card">
-                <h3>70%</h3>
-                <p>Search API Speedup</p> </div>
-            <div class="metric-card">
-                <h3>40%</h3>
-                <p>Data Loss Reduction</p> </div>
+            <div class="metric-card"><h3>60%</h3><p>Operational Cost Cut</p></div>
+            <div class="metric-card"><h3>70%</h3><p>Search API Speedup</p></div>
+            <div class="metric-card"><h3>35%</h3><p>EDR Funnel Efficiency</p></div>
+            <div class="metric-card"><h3>40%</h3><p>Reduction in Data Loss</p></div>
         </div>
 
         <section id="experience">
-            <h2><i class="fas fa-bolt"></i> Professional Impact</h2>
-            <div class="content-card">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            <div class="glass-card">
                 <div class="exp-item">
                     <div class="exp-header">
-                        <h3>Cloud Software Engineer | Trellix</h3> <span>Mar 2024 – Present</span> </div>
+                        <h3>Cloud Software Engineer | Trellix</h3>
+                        <span>Mar 2024 – Present</span>
+                    </div>
                     <ul>
-                        <li>Optimized detection engine efficiency by developing a high-performance pre-filter.</li>
-                        <li>Mentored 3 interns on Java/Spring development and Git best practices.</li>
-                        <li>Increased overall efficiency of the EDR detection funnel by 35%.</li>
+                        <li>Optimized detection engine efficiency by developing a high-performance pre-filter, cutting operational costs by 60%.</li>
+                        <li>Mentored 3 new interns on best practices for Java/Spring development and Git workflows.</li>
+                        <li>Collaborated with cross-functional teams to resolve critical customer and production issues.</li>
                     </ul>
                 </div>
 
                 <div class="exp-item">
                     <div class="exp-header">
-                        <h3>Associate Cloud Software Engineer | Trellix</h3> <span>Aug 2021 – Mar 2024</span> </div>
+                        <h3>Associate Cloud Software Engineer | Trellix</h3>
+                        <span>Aug 2021 – Mar 2024</span>
+                    </div>
                     <ul>
-                        <li>Improved response time for search APIs by 70% through backend optimizations.</li>
+                        <li>Improved response time for search APIs by 70% through deep backend optimizations.</li>
                         <li>Implemented Linux and MacOS supportability within the EDR detection funnel.</li>
-                        <li>Served as Scrum Master for a cross-functional team of 20 employees.</li>
+                        <li>Served as Scrum Master for a team of 20, facilitating Agile ceremonies and sprint planning.</li>
                     </ul>
                 </div>
+
                 <div class="exp-item">
                     <div class="exp-header">
-                        <h3>Technical Intern | McAfee</h3> <span>Feb 2021 – Aug 2021</span> </div>
+                        <h3>Technical Intern | McAfee</h3>
+                        <span>Feb 2021 – Aug 2021</span>
+                    </div>
                     <ul>
-                        <li>Contributed to the development of new features and bug fixes for the EDR detection engine.</li>
-                        <li>Re-implemented alerting mechanisms for unexpected statistical variations in the detection engine.</li>
+                        <li>Contributed to feature development and bug fixes for the EDR detection engine.</li>
+                        <li>Re-implemented alerting mechanisms for statistical variations in the detection engine.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="tech">
-            <h2><i class="fas fa-code"></i> Tech Stack</h2>
-            <div class="content-card">
-                <div class="skills-grid">
-                    <div class="skill-box">
-                        <h4>Backend & Engineering</h4>
-                        <div class="chips">
-                            <span>Java/J2EE</span><span>Spring Framework</span><span>SpringBoot</span><span>Apache Kafka</span><span>REST API</span><span>Maven</span><span>Gradle</span> </div>
+            <h2><i class="fas fa-layer-group"></i> Technical Arsenal</h2>
+            <div class="tech-grid">
+                <div class="tech-box">
+                    <h4>Languages & Frameworks</h4>
+                    <div class="chips">
+                        <span><i class="devicon-java-plain colored"></i> Java/J2EE</span>
+                        <span><i class="devicon-spring-plain colored"></i> Spring Boot</span>
+                        <span><i class="devicon-apachekafka-original colored"></i> Kafka</span>
+                        <span><i class="fas fa-code"></i> REST API</span>
+                        <span><i class="devicon-gradle-plain"></i> Gradle</span>
+                        <span><i class="devicon-maven-plain"></i> Maven</span>
                     </div>
-                    <div class="skill-box">
-                        <h4>Cloud & DevOps</h4>
-                        <div class="chips">
-                            <span>AWS (EKS, S3, EC2)</span><span>Docker</span><span>Kubernetes</span><span>ArgoCD</span><span>TeamCity</span><span>GitHub Actions</span> </div>
+                </div>
+                <div class="tech-box">
+                    <h4>Cloud & CI/CD</h4>
+                    <div class="chips">
+                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS (EKS, S3, EC2, RDS)</span>
+                        <span><i class="devicon-docker-plain colored"></i> Docker</span>
+                        <span><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+                        <span><i class="devicon-argocd-plain colored"></i> ArgoCD</span>
+                        <span><i class="fas fa-cloud-upload-alt"></i> TeamCity</span>
+                        <span><i class="devicon-github-original"></i> GitHub Actions</span>
                     </div>
-                    <div class="skill-box">
-                        <h4>Security</h4>
-                        <div class="chips">
-                            <span>EDR</span><span>YARA Tool</span><span>OCSF</span><span>MITRE ATT&CK</span><span>OWASP Top 10</span> </div>
+                </div>
+                <div class="tech-box">
+                    <h4>Security & Monitoring</h4>
+                    <div class="chips">
+                        <span><i class="fas fa-shield-alt"></i> EDR Detection</span>
+                        <span><i class="fas fa-search"></i> YARA Tool</span>
+                        <span><i class="fas fa-project-diagram"></i> OCSF</span>
+                        <span><i class="fas fa-user-secret"></i> MITRE ATT&CK</span>
+                        <span><i class="devicon-prometheus-original colored"></i> Prometheus</span>
+                        <span><i class="devicon-grafana-original colored"></i> Grafana</span>
+                        <span><i class="fas fa-database"></i> ELK Stack</span>
                     </div>
-                    <div class="skill-box">
-                        <h4>Monitoring</h4>
-                        <div class="chips">
-                            <span>Grafana</span><span>Prometheus</span><span>ELK Stack</span> </div>
+                </div>
+                <div class="tech-box">
+                    <h4>Data & Tools</h4>
+                    <div class="chips">
+                        <span><i class="fas fa-database"></i> MySQL</span>
+                        <span><i class="fas fa-server"></i> Cassandra</span>
+                        <span><i class="fas fa-terminal"></i> Postman</span>
+                        <span><i class="devicon-intellij-plain"></i> IntelliJ</span>
+                        <span><i class="devicon-jira-plain colored"></i> JIRA</span>
+                        <span><i class="fas fa-users"></i> Agile/Scrum</span>
                     </div>
-                    <div class="skill-box">
-                        <h4>Data Storages</h4>
-                        <div class="chips">
-                            <span>RDBMS</span><span>MySQL</span><span>Apache Cassandra</span>
-                        </div>
-                    </div>
-                    <div class="skill-box">
-                        <h4>Testing</h4>
-                        <div class="chips">
-                            <span>JUnit</span><span>Mockito</span><span>Apache JMeter</span><span>Behaviour-Driven Development</span>
-                        </div>
-                    </div>
-                    <div class="skill-box">
-                        <h4>Operating Systems</h4>
-                        <div class="chips">
-                            <span>Windows</span><span>Linux</span><span>MacOS</span>
-                        </div>
-                    </div>
-                    <div class="skill-box">
-                        <h4>Scrum & Tools</h4>
-                        <div class="chips">
-                            <span>Postman</span><span>VSCode</span><span>IntelliJ</span><span>JIRA</span><span>Confluence</span><span>SDLC</span><span>Agile</span>
-                        </div>
-                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="academic">
-            <h2><i class="fas fa-graduation-cap"></i> Academic & Research</h2>
-            <div class="content-card">
+            <h2><i class="fas fa-graduation-cap"></i> Education & Publications</h2>
+            <div class="glass-card">
                 <div class="exp-header">
-                    <h3>MTech in Software Systems (Security)</h3> <span>BITS Pilani | CGPA 7.98</span> </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">
-                    Publication: "Literature Review of Machine Learning Algorithms for Improving Network Security" (Jan 2024).
-                </p>
-            </div>
-            <div class="content-card">
+                    <h3>MTech in Software Systems (Security) | BITS Pilani</h3>
+                    <span>CGPA 7.98 | 2025</span>
+                </div>
+                <p>Publication: "Literature Review of ML Algorithms for Improving Network Security" (2024)</p>
+                <br>
                 <div class="exp-header">
-                    <h3>BTech in Information Technology</h3> <span>WBUT | DGPA 8.79</span> </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">
-                    Publication: "Serial and Parallel based Intrusion Detection System using Machine Learning" (June 2021).
-                </p>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">
-                    Publication: "Authentication and Secure Communication by Haar Cascade Classifier, Eigen Face,
-LBP Histogram and Variable Irreducible Polynomial in (2^8) finite field" (June 2021).
-                </p>
+                    <h3>BTech in Information Technology | WBUT</h3>
+                    <span>DGPA 8.79 | 2021</span>
+                </div>
+                <p>Publication: "Serial and Parallel based Intrusion Detection System using Machine Learning" (2021)</p>
+                <p>Publication: "Authentication and Secure Communication by Haar Cascade Classifier" (2021)</p>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Ayantika Sarkar. Built for performance and security.</p>
+        <p>&copy; 2026 Ayantika Sarkar. Built with Performance, Scalability & Security.</p>
     </footer>
-
 </body>
 </html>
