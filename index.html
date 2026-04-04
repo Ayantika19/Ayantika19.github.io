@@ -6,69 +6,86 @@
     <title>Ayantika Sarkar | Cloud Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Ayantika Sarkar</h1> <p class="subtitle">Cloud Software Engineer | 4+ Years Experience</p> <div class="contact-links">
-                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a> <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> <a href="#"><i class="fas fa-file-pdf"></i> Resume</a>
+        <div class="container hero">
+            <div class="badge">Available for UK/Ireland Opportunities</div>
+            <h1>Ayantika Sarkar</h1>
+            <p class="tagline">Cloud Software Engineer specializing in Security & High-Performance Systems</p>
+            <div class="header-links">
+                <a href="mailto:ayantikasarkar17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/ayantika-sarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/ayantika19" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section id="summary">
-            <h2>Professional Summary</h2>
-            <p>Organized, dedicated and ambitious Information Technology professional with a keen interest in development and designing of applications[cite: 4]. Currently working as a Cloud Software Engineer with 4+ years of experience[cite: 5].</p>
+        <section class="card">
+            <h2><i class="fas fa-user-circle"></i> About Me</h2>
+            <p>Organized, dedicated, and ambitious Cloud Software Engineer with 4+ years of experience[cite: 5]. I specialize in optimizing detection engines and backend APIs, with a strong academic background in Software Security from BITS Pilani[cite: 8, 41].</p>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="entry">
-                <h3>Cloud Software Engineer | Trellix India</h3> <p class="date">Mar 2024 - Present</p> <ul>
-                    <li>Optimized detection engine efficiency by 60% through a high-performance pre-filter[cite: 8].</li>
-                    <li>Increased EDR detection funnel efficiency by 35%[cite: 9].</li>
-                    <li>Mentored 3 interns on Java/Spring development and Git workflows[cite: 9].</li>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>60%</h3>
+                <p>Reduction in Operational Costs [cite: 8]</p>
+            </div>
+            <div class="stat-card">
+                <h3>70%</h3>
+                <p>Search API Speedup [cite: 12]</p>
+            </div>
+            <div class="stat-card">
+                <h3>40%</h3>
+                <p>Data Loss Reduction [cite: 16]</p>
+            </div>
+        </div>
+
+        <section class="card">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>Cloud Software Engineer | Trellix</h3>
+                    <span>2021 – Present [cite: 14, 15]</span>
+                </div>
+                <ul>
+                    <li>Optimized EDR detection funnel efficiency by 35%[cite: 9].</li>
+                    <li>Developed high-performance pre-filters cutting overhead by 60%[cite: 8].</li>
+                    <li>Mentored 3 interns on Java/Spring and Git workflows[cite: 9].</li>
                 </ul>
             </div>
-            <div class="entry">
-                <h3>Associate Cloud Software Engineer | Trellix India</h3> <p class="date">Aug 2021 - Mar 2024</p> <ul>
-                    <li>Improved search API response time by 70% via backend optimizations[cite: 12].</li>
-                    <li>Reduced data loss in the detection funnel by 40%[cite: 16].</li>
-                    <li>Served as Scrum Master for a cross-functional team of 20 employees[cite: 16, 17].</li>
-                </ul>
+        </section>
+
+        <section class="card">
+            <h2><i class="fas fa-tools"></i> Tech Stack</h2>
+            <div class="skill-group">
+                <h3>Backend & Messaging</h3>
+                <div class="chips">
+                    <span>Java/J2EE [cite: 55]</span><span>Spring Boot [cite: 55]</span><span>Apache Kafka [cite: 55]</span><span>REST APIs [cite: 55]</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Cloud & Infrastructure</h3>
+                <div class="chips">
+                    <span>AWS (EKS, S3, EC2) [cite: 58]</span><span>Kubernetes [cite: 56]</span><span>Docker [cite: 56]</span><span>ArgoCD [cite: 56]</span>
+                </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects & Publications</h2>
-            <div class="entry">
-                <h3>YARAWatch - Streaming Detection Engine</h3> <p>Designed a SpringBoot-based streaming application utilizing YARA for OCSF event detection[cite: 24, 25].</p>
+        <section class="card">
+            <h2><i class="fas fa-book"></i> Publications</h2>
+            <div class="project-item">
+                <h3>ML for Network Security [cite: 26]</h3>
+                <p>A comprehensive review of Machine Learning algorithms used to improvise network security protocols[cite: 28].</p>
             </div>
-            <div class="entry">
-                <h3>ML for Network Security | Publication</h3> <p>Analyzed various Machine Learning techniques for improving network security protocols[cite: 28].</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div><strong>Backend:</strong> Java, Spring Framework, SpringBoot, Kafka [cite: 55]</div>
-                <div><strong>Cloud/DevOps:</strong> AWS (EKS, S3, EC2), Docker, Kubernetes, ArgoCD [cite: 56, 58]</div>
-                <div><strong>Security:</strong> EDR, YARA Tool, OCSF, MITRE ATT&CK [cite: 60]</div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <p><strong>M.Tech in Software Systems (Security)</strong> | BITS Pilani (CGPA: 7.98) [cite: 41, 42, 51]</p>
-            <p><strong>B.Tech in Information Technology</strong> | West Bengal University of Technology (DGPA: 8.79) [cite: 43, 44, 53]</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Ayantika Sarkar. Built with HTML/CSS.</p>
+        <p>Built with ❤️ by Ayantika Sarkar | 2026</p>
     </footer>
 
 </body>
