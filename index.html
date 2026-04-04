@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,12 @@
             --text-muted: #94a3b8;
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; transition: all 0.3s ease; }
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
@@ -30,7 +36,11 @@
             overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
 
         /* Floating Nav */
         nav {
@@ -46,13 +56,28 @@
             z-index: 1000;
             display: flex;
             gap: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        nav a:hover { color: var(--accent); }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
 
         /* Hero Header */
-        header { padding: 180px 0 80px; text-align: center; }
+        header {
+            padding: 180px 0 80px;
+            text-align: center;
+        }
+
         .status-pill {
             display: inline-flex;
             align-items: center;
@@ -66,15 +91,62 @@
             border: 1px solid rgba(59, 130, 246, 0.3);
             margin-bottom: 30px;
         }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; font-weight: 800; letter-spacing: -3px; line-height: 1.1; }
-        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-size: 1.25rem; color: var(--text-muted); margin: 25px auto; max-width: 800px; }
 
-        .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
-        .btn { padding: 14px 30px; border-radius: 14px; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .btn-primary { background: var(--accent-gradient); color: white; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
-        .btn-secondary { background: var(--card); border: 1px solid var(--card-border); color: white; }
-        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin: 25px auto;
+            max-width: 800px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
 
         /* Glass Cards */
         .glass-card {
@@ -87,63 +159,211 @@
         }
 
         /* Metrics Grid */
-        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 80px; }
-        .metric-card { background: var(--card); padding: 30px; border-radius: 24px; text-align: center; border: 1px solid var(--card-border); }
-        .metric-card h3 { font-size: 2.8rem; margin: 0; color: var(--accent); font-weight: 800; }
-        .metric-card p { margin: 10px 0 0; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
 
-        section { margin: 100px 0; }
-        h2 { font-size: 2rem; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; font-weight: 800; }
-        h2 i { color: var(--accent); }
+        .metric-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+        }
+
+        .metric-card h3 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .metric-card p {
+            margin: 10px 0 0;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        section {
+            margin: 100px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 800;
+        }
+
+        h2 i {
+            color: var(--accent);
+        }
 
         /* Professional Items */
-        .exp-item { border-left: 2px solid rgba(59, 130, 246, 0.2); padding-left: 30px; position: relative; margin-bottom: 50px; }
-        .exp-item::before { content: ''; position: absolute; left: -9px; top: 5px; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent); }
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; }
-        .exp-header h3 { margin: 0; font-size: 1.4rem; color: #fff; font-weight: 700; }
-        .exp-header span { color: var(--accent); font-weight: 700; font-size: 0.9rem; background: rgba(59,130,246,0.1); padding: 4px 12px; border-radius: 50px; }
-        ul { padding-left: 20px; color: var(--text-muted); }
-        li { margin-bottom: 10px; }
+        .exp-item {
+            border-left: 2px solid rgba(59, 130, 246, 0.2);
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .exp-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .exp-header span {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
 
         /* Tech Stack Categorized */
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .tech-box h4 { margin: 0 0 20px; color: var(--text-muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
-        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-        .chips span { 
-            background: rgba(255,255,255,0.03); 
-            padding: 8px 16px; 
-            border-radius: 12px; 
-            font-size: 0.85rem; 
-            border: 1px solid var(--card-border); 
-            display: flex; align-items: center; gap: 8px;
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
-        .chips span i { font-size: 1.1rem; }
+
+        .tech-box h4 {
+            margin: 0 0 20px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chips span {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chips span i {
+            font-size: 1.1rem;
+        }
 
         /* Personal Section */
-        .personal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .personal-card { 
-            background: rgba(16, 185, 129, 0.03); 
-            border: 1px solid rgba(16, 185, 129, 0.1); 
-            padding: 30px; 
-            border-radius: 24px; 
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        .personal-card i { color: var(--personal-accent); font-size: 1.8rem; margin-bottom: 20px; display: block; }
-        .personal-card h4 { margin: 0 0 12px; color: #fff; font-size: 1.2rem; }
+
+        .personal-card {
+            background: rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            padding: 30px;
+            border-radius: 24px;
+        }
+
+        .personal-card i {
+            color: var(--personal-accent);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .personal-card h4 {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 1.2rem;
+        }
 
         /* Resume PDF View */
-        .resume-frame { width: 100%; height: 600px; border-radius: 20px; border: 1px solid var(--card-border); background: #111827; }
+        .resume-frame {
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            background: #111827;
+        }
 
-        footer { text-align: center; padding: 100px 0; color: var(--text-muted); border-top: 1px solid var(--card-border); }
+        footer {
+            text-align: center;
+            padding: 100px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+        }
 
         @media (max-width: 768px) {
-            header { padding: 140px 0 60px; }
-            nav { width: 95%; gap: 10px; padding: 10px 15px; }
-            nav a { font-size: 0.7rem; }
-            .exp-header { flex-direction: column; gap: 10px; }
-            .resume-frame { height: 400px; }
+            header {
+                padding: 140px 0 60px;
+            }
+
+            nav {
+                width: 95%;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .resume-frame {
+                height: 400px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -158,7 +378,7 @@
             <div class="status-pill"><i class="fas fa-globe-europe"></i> Focused on India, UK & Ireland Ecosystems</div>
             <h1>Ayantika <span class="gradient-text">Sarkar</span></h1>
             <p class="tagline">Cloud Software Engineer with 4.5+ years of expertise in Security, Backend Optimization, and Scalable Cloud Architectures.</p>
-            
+
             <div class="btn-group">
                 <a href="#resume" class="btn btn-primary"><i class="fas fa-file-pdf"></i> View Resume</a>
                 <a href="mailto:ayantikasarkar17@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
@@ -169,10 +389,22 @@
 
     <div class="container">
         <div class="metrics">
-            <div class="metric-card"><h3>60%</h3><p>Operational Cost Cut</p></div>
-            <div class="metric-card"><h3>70%</h3><p>Search API Speedup</p></div>
-            <div class="metric-card"><h3>35%</h3><p>EDR Funnel Efficiency</p></div>
-            <div class="metric-card"><h3>40%</h3><p>Data Loss Reduction</p></div>
+            <div class="metric-card">
+                <h3>60%</h3>
+                <p>Operational Cost Cut</p>
+            </div>
+            <div class="metric-card">
+                <h3>70%</h3>
+                <p>Search API Speedup</p>
+            </div>
+            <div class="metric-card">
+                <h3>35%</h3>
+                <p>EDR Funnel Efficiency</p>
+            </div>
+            <div class="metric-card">
+                <h3>40%</h3>
+                <p>Data Loss Reduction</p>
+            </div>
         </div>
 
         <section id="experience">
@@ -226,36 +458,60 @@
                         <span><i class="devicon-java-plain colored"></i> Java/J2EE</span>
                         <span><i class="devicon-spring-plain colored"></i> Spring Boot</span>
                         <span><i class="devicon-apachekafka-original colored"></i> Kafka</span>
-                        <span><i class="fas fa-code"></i> REST API</span>
-                        <span><i class="devicon-gradle-plain"></i> Gradle</span>
-                        <span><i class="devicon-maven-plain"></i> Maven</span>
+                        <span><i class="fas fa-code-branch" style="color: #f05032;"></i> REST API</span>
+                        <span><i class="devicon-gradle-plain colored"></i> Gradle</span>
+                        <span><i class="devicon-maven-plain colored"></i> Maven</span>
                     </div>
                 </div>
                 <div class="tech-box">
                     <h4>Cloud & Devops</h4>
                     <div class="chips">
-                        <span><i class="fab fa-aws"></i> AWS (EKS, S3, EC2, RDS)</span>
-                        <span><i class="fab fa-docker"></i> Docker</span>
+                        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</span>
+                        <span><i class="devicon-docker-plain colored"></i> Docker</span>
                         <span><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
                         <span><i class="devicon-argocd-plain colored"></i> ArgoCD</span>
-                        <span><i class="fas fa-infinity"></i> TeamCity / GitHub Actions</span>
+                        <span><i class="devicon-jetbrains-plain colored"></i> TeamCity</span>
+                        <span><i class="devicon-githubactions-plain colored"></i> GitHub Actions</span>
                     </div>
                 </div>
                 <div class="tech-box">
-                    <h4>Security & Performance</h4>
+                    <h4>Security & Monitoring</h4>
                     <div class="chips">
-                        <span><i class="fas fa-user-shield"></i> EDR Detection</span>
-                        <span><i class="fas fa-search"></i> YARA / OCSF</span>
-                        <span><i class="fas fa-project-diagram"></i> MITRE ATT&CK</span>
-                        <span><i class="devicon-prometheus-original colored"></i> Prometheus / Grafana</span>
+                        <span><i class="fas fa-shield-halved" style="color: #3b82f6;"></i> EDR</span>
+                        <span><i class="fas fa-fingerprint" style="color: #8b5cf6;"></i> YARA / OCSF</span>
+                        <span><i class="fas fa-biohazard" style="color: #ef4444;"></i> MITRE ATT&CK</span>
+                        <span><i class="devicon-prometheus-original colored"></i> Prometheus / Grafana </span>
+                        <span><i class="devicon-kibana-plain"></i> ELK Stack</span>
                     </div>
                 </div>
                 <div class="tech-box">
                     <h4>Data & Testing</h4>
                     <div class="chips">
-                        <span><i class="fas fa-database"></i> MySQL / Cassandra</span>
-                        <span><i class="fas fa-vial"></i> JUnit / Mockito / BDD</span>
-                        <span><i class="fas fa-tachometer-alt"></i> Apache JMeter</span>
+                        <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                        <span><i class="devicon-cassandra-plain colored"></i> Cassandra</span>
+                        <span><i class="devicon-junit-plain"></i> JUnit / Mockito</span>
+                        <span><i class="fas fa-gauge-high" style="color: #f59e0b;"></i> JMeter / BDD</span>
+                    </div>
+                </div>
+                <div class="tech-box">
+                    <h4>Tools & Operating Systems</h4>
+                    <div class="chips">
+                        <span><i class="devicon-vscode-plain"></i>VSCode</span>
+                        <span>
+                            <i class="devicon-intellij-plain"></i>
+                            IntelliJ</span>
+                        <span>
+                            <i class="devicon-postman-plain"></i>
+                            Postman</span>
+                        <span>
+                            <i class="devicon-linux-plain"></i>
+                            Linux</span>
+                        <span>
+                            <i class="devicon-apple-original"></i>
+                            MacOS</span>
+                        <span>
+                            <i class="devicon-windows11-original"></i>
+                            Windows</span>
                     </div>
                 </div>
             </div>
@@ -318,4 +574,5 @@
     </footer>
 
 </body>
+
 </html>
