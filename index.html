@@ -16,6 +16,7 @@
             --card-border: rgba(255, 255, 255, 0.08);
             --accent: #3b82f6;
             --personal-accent: #10b981;
+            --lang-accent: #8b5cf6;
             --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --text: #f8fafc;
             --text-muted: #94a3b8;
@@ -72,7 +73,6 @@
             color: var(--accent);
         }
 
-        /* Hero Header */
         header {
             padding: 180px 0 80px;
             text-align: center;
@@ -148,7 +148,6 @@
             opacity: 0.9;
         }
 
-        /* Glass Cards */
         .glass-card {
             background: var(--card);
             padding: 40px;
@@ -158,7 +157,6 @@
             margin-bottom: 30px;
         }
 
-        /* Metrics Grid */
         .metrics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -205,7 +203,6 @@
             color: var(--accent);
         }
 
-        /* Professional Items */
         .exp-item {
             border-left: 2px solid rgba(59, 130, 246, 0.2);
             padding-left: 30px;
@@ -258,7 +255,6 @@
             margin-bottom: 10px;
         }
 
-        /* Tech Stack Categorized */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -290,11 +286,15 @@
             gap: 8px;
         }
 
+        .chips.languages span {
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
         .chips span i {
             font-size: 1.1rem;
         }
 
-        /* Personal Section */
         .personal-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -321,7 +321,6 @@
             font-size: 1.2rem;
         }
 
-        /* Resume PDF View */
         .resume-frame {
             width: 100%;
             height: 600px;
@@ -369,6 +368,7 @@
     <nav>
         <a href="#experience">Experience</a>
         <a href="#tech">Skills</a>
+        <a href="#languages">Languages</a>
         <a href="#resume">Resume</a>
         <a href="#personal" style="color: var(--personal-accent);">Personal</a>
     </nav>
@@ -494,25 +494,26 @@
                     </div>
                 </div>
                 <div class="tech-box">
-                    <h4>Tools & Operating Systems</h4>
+                    <h4>Tools & OS</h4>
                     <div class="chips">
                         <span><i class="devicon-vscode-plain"></i>VSCode</span>
-                        <span>
-                            <i class="devicon-intellij-plain"></i>
-                            IntelliJ</span>
-                        <span>
-                            <i class="devicon-postman-plain"></i>
-                            Postman</span>
-                        <span>
-                            <i class="devicon-linux-plain"></i>
-                            Linux</span>
-                        <span>
-                            <i class="devicon-apple-original"></i>
-                            MacOS</span>
-                        <span>
-                            <i class="devicon-windows11-original"></i>
-                            Windows</span>
+                        <span><i class="devicon-intellij-plain"></i> IntelliJ</span>
+                        <span><i class="devicon-postman-plain"></i> Postman</span>
+                        <span><i class="devicon-linux-plain"></i> Linux</span>
+                        <span><i class="devicon-apple-original"></i> MacOS</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2><i class="fas fa-comments" style="color: var(--lang-accent);"></i> Communication & Languages</h2>
+            <div class="glass-card">
+                <p style="color: var(--text-muted); margin-bottom: 20px;"> Professional proficiency across regional and international communication channels.</p>
+                <div class="chips languages">
+                    <span><i class="fas fa-check-circle" style="color: var(--lang-accent);"></i> English</span>
+                    <span><i class="fas fa-check-circle" style="color: var(--lang-accent);"></i> Hindi</span>
+                    <span><i class="fas fa-check-circle" style="color: var(--lang-accent);"></i> Bengali</span>
                 </div>
             </div>
         </section>
