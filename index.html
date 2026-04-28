@@ -329,6 +329,124 @@
             background: #111827;
         }
 
+        /* Open Source Section Styling */
+        #open-source {
+            padding: 80px 0;
+            background-color: #1a1a1a
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666
+            margin-bottom: 50px;
+        }
+
+        .contribution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contribution-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .contribution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contribution-card h3 {
+            margin-top: 15px;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .contribution-card p {
+            color: #555;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .contribution-tags {
+            margin-bottom: 20px;
+        }
+
+        .contribution-tags span {
+            background: #e1f5fe;
+            color: #039be5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .view-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+        }
+        /* Styling for the PR Links inside the card */
+        .pr-links {
+            margin: 15px 0;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .pr-links h4 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pr-links ul {
+            margin: 0;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .pr-links li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .pr-links li i {
+            font-size: 1.1rem;
+            color: #28a745;
+            margin-top: 2px;
+        }
+
+        .pr-links a {
+            font-size: 0.95rem;
+            color: #007bff;
+            text-decoration: none;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+        
+        .pr-links a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        
         footer {
             text-align: center;
             padding: 100px 0;
@@ -371,6 +489,7 @@
         <a href="#languages">Languages</a>
         <a href="#resume">Resume</a>
         <a href="#personal" style="color: var(--personal-accent);">Personal</a>
+        <a href="#open-source">Open Source</a>
     </nav>
 
     <header>
@@ -416,10 +535,10 @@
                         <span>Mar 2024 – Present</span>
                     </div>
                     <ul>
-                        <li>Optimized detection engine efficiency by developing a high-performance pre-filter, reducing operational costs by 60%.</li>
-                        <li>Mentored 3 new interns on Java/Spring development and Git best practices.</li>
-                        <li>Collaborated with teams to resolve critical customer and production bugs.</li>
-                        <li>Increased the overall efficiency of the EDR detection funnel by 35%.</li>
+                        <li>Reduced computational overhead and AWS operational costs by 60% by architecting a high-performance detection pre-filter utilising Java & Spring Boot micro-services.</li>
+                        <li>Mentored 3 junior engineers on backend software architecture, Spring Boot best practices and advanced version control workflows with Git.</li>
+                        <li>Engineered automated CI/CD pipelines leveraging Github Actions for artifact packaging and ArgoCD for declarative, GitOps-based deployments into production Kubernetes (AWS EKS) clusters.</li>
+                        <li>Collaborated with teams to resolve critical customer and production issues and bugs.</li>
                     </ul>
                 </div>
 
@@ -429,10 +548,10 @@
                         <span>Aug 2021 – Mar 2024</span>
                     </div>
                     <ul>
-                        <li>Improved response time for search APIs by 70% through deep backend optimizations.</li>
-                        <li>Implemented Linux and MacOS supportability within the EDR detection funnel.</li>
-                        <li>Served as Scrum Master for a cross-functional team of 20 employees, facilitating Agile ceremonies.</li>
-                        <li>Reduced data loss in the detection funnel by 40% through improved processing logic.</li>
+                        <li>Slashed search REST API latency by 70% by refactoring complex MySQL database queries and optimising data retrieval executional plans.</li>
+                        <li>Implemented cross-platform supportability (Linux & MacOS) within the EDR detection funnel resolving critical production bottlenecks.</li>
+                        <li>Mitigated data loss in a high-throughput EDR detection funnel by 40% by implementing robust distributed event streaming logic (Apache Kafka/SpringBoot) to ensure zero-fault message delivery.</li>
+                        <li>Served as scrum master for a cross-functional Agile team of 20 engineers, streamlining sprint planning and feature delivery</li>
                     </ul>
                 </div>
 
@@ -534,7 +653,7 @@
             <h2><i class="fas fa-graduation-cap"></i> Academic & Research</h2>
             <div class="glass-card">
                 <div class="exp-header">
-                    <h3>MTech, Software Systems (Security) | BITS Pilani</h3>
+                    <h3>MTech, Software Systems (Security) [Part-Time] | BITS Pilani</h3>
                     <span>CGPA: 7.98 | 2025</span>
                 </div>
                 <p>Publication: "Literature Review of Machine Learning Algorithms for Improving Network Security" (Jan 2024).</p>
@@ -546,6 +665,72 @@
                 <p>Publication: "Serial and Parallel based Intrusion Detection System using Machine Learning" (2021)</p>
                 <p>Publication: "Authentication and Secure Communication by Haar Cascade Classifier" (2021)</p>
             </div>
+        </section>
+
+        <section id="open-source" class="section">
+            <div class="container">
+                <h2 class="section-title">Open Source Contributions</h2>h2>
+                <p class="section-subtitle">A collection of my contributions to the large-scale distributed systems.</p>
+
+                <div class="contribution-grid">
+                    <div class="contribution-card">
+                        <div class="contribution-icon">
+                            <i class="ri-git-merge-line"></i></div>
+                        <h3>Apache Cassandra</h3>
+                        <p>Contributed to the core Java codebase of Cassandra, a distributed NoSQL database.</p>
+                        <div class="pr-links">
+                            <h4>Pull Requests:</h4>
+                            <ul>
+                                <li>
+                                    <i class="ri-git-pull-request-line"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4726" target="_blank"> PR #4726:</a>
+                                </li>
+                                <li>
+                                    <i class="ri-git-pull-request-line"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4731" target="_blank"> PR #4731:</a>
+                                </li>
+                                <li>
+                                    <i class="ri-git-pull-request-line"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4736" target="_blank"> PR #4736:</a>
+                                </li>
+                                <li>
+                                    <i class="ri-git-pull-request-line"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/3614" target="_blank"> PR #3614:</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contribution-tags">
+                            <span>Java</span>
+                            <span>Distributed Systems</span>
+                        </div>
+                        <a href="https://github.com/apache/cassandra" target="_blank" class="view-link">View Repository -></a>
+                    </div>
+
+                    <div class="contribution-card">
+                        <div class="contribution-icon">
+                            <i class="ri-git-pull-request-line"></i>
+                        </div>
+                        <h3>Apache Kafka</h3>
+                        <p>Involved inimproving the distributed event streaming platform.</p>
+                        <div class="pr-links">
+                            <h4>Pull Requests:</h4>
+                            <ul>
+                                <li>
+                                    <i class="ri-git-pull-request-line"></i>
+                                    <a href="https://github.com/apache/kafka/pull/22033" target="_blank"> PR #22033:</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contribution-tags">
+                            <span>Java</span>
+                            <span>Streaming</span>
+                        </div>
+                        <a href="https://github.com/apache/kafka" target="_blank" class="view-link">View Repository -></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
         </section>
 
         <section id="personal">
