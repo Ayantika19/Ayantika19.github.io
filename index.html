@@ -330,123 +330,103 @@
         }
 
         /* Open Source Section Styling */
-        #open-source {
-            padding: 80px 0;
-            background-color: #1a1a1a
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666
-            margin-bottom: 50px;
-        }
-
-        .contribution-grid {
+        .os-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+            gap: 20px;
         }
 
-        .contribution-card {
-            background: #fff;
+        .os-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .contribution-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contribution-card h3 {
-            margin-top: 15px;
-            font-size: 1.4rem;
-            color: #333;
-        }
-
-        .contribution-card p {
-            color: #555;
-            line-height: 1.6;
-            margin: 15px 0;
-        }
-
-        .contribution-tags {
-            margin-bottom: 20px;
-        }
-
-        .contribution-tags span {
-            background: #e1f5fe;
-            color: #039be5;
-            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
-
-        .view-link {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: 600;
-        }
-        /* Styling for the PR Links inside the card */
-        .pr-links {
-            margin: 15px 0;
-            padding-top: 15px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .pr-links h4 {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .pr-links ul {
-            margin: 0;
-            padding-left: 0;
-            list-style-type: none;
-        }
-
-        .pr-links li {
-            margin-bottom: 8px;
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-        
-        .pr-links li i {
-            font-size: 1.1rem;
-            color: #28a745;
-            margin-top: 2px;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .pr-links a {
+        .os-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4); 
+        }
+
+        .os-card h3 {
+            margin: 0 0 15px;
+            font-size: 1.4rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .os-card h3 i {
+            font-size: 1.8rem;
+        }
+
+        .os-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
             font-size: 0.95rem;
-            color: #007bff;
+        }
+
+        .os-card .pr-links {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .os-card .pr-links h4 {
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 15px;
+        }
+
+        .os-card .pr-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .os-card .pr-links li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+        }
+
+        .os-card .pr-links a {
+            color: var(--text);
             text-decoration: none;
-            line-height: 1.4;
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: color 0.2s ease;
         }
-        
-        .pr-links a:hover {
-            color: #0056b3;
-            text-decoration: underline;
+
+        .os-card .pr-links a:hover {
+            color: var(--accent);
         }
-        
+
+        .os-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            font-size: 0.95rem;
+        }
+
+        .os-link:hover {
+            opacity: 0.8;
+        }
+
         footer {
             text-align: center;
             padding: 100px 0;
@@ -668,72 +648,68 @@
         </section>
 
         <section id="open-source">
-            <h2><i class="fa fa-code"></i> Open Source Contributions</h2>
+            <h2><i class="fab fa-osi"></i> Open Source Contributions</h2>
             <div class="glass-card">
-                <p class="section-subtitle">A collection of my contributions to the large-scale distributed systems.</p>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">A collection of my contributions to large-scale distributed systems.</p>
 
-                <div class="contribution-grid">
-                    <div class="contribution-card">
-                        <div class="contribution-icon">
-                            <i class="ri-git-merge-line"></i></div>
-                        <h3>Apache Cassandra</h3>
+                <div class="os-grid">
+                    <div class="os-card">
+                        <h3><i class="devicon-cassandra-plain colored"></i> Apache Cassandra</h3>
                         <p>Contributed to the core Java codebase of Cassandra, a distributed NoSQL database.</p>
+                        
                         <div class="pr-links">
-                            <h4>Pull Requests:</h4>
+                            <h4>Pull Requests</h4>
                             <ul>
                                 <li>
-                                    <i class="ri-git-pull-request-line"></i>
-                                    <a href="https://github.com/apache/cassandra/pull/4726" target="_blank"> PR #4726</a>
+                                    <i class="fas fa-code-pull-request" style="color: #10b981;"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4726" target="_blank">PR #4726</a>
                                 </li>
                                 <li>
-                                    <i class="ri-git-pull-request-line"></i>
-                                    <a href="https://github.com/apache/cassandra/pull/4731" target="_blank"> PR #4731</a>
+                                    <i class="fas fa-code-pull-request" style="color: #10b981;"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4731" target="_blank">PR #4731</a>
                                 </li>
                                 <li>
-                                    <i class="ri-git-pull-request-line"></i>
-                                    <a href="https://github.com/apache/cassandra/pull/4736" target="_blank"> PR #4736</a>
+                                    <i class="fas fa-code-pull-request" style="color: #10b981;"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/4736" target="_blank">PR #4736</a>
                                 </li>
                                 <li>
-                                    <i class="ri-git-pull-request-line"></i>
-                                    <a href="https://github.com/apache/cassandra/pull/3614" target="_blank"> PR #3614</a>
+                                    <i class="fas fa-code-pull-request" style="color: #10b981;"></i>
+                                    <a href="https://github.com/apache/cassandra/pull/3614" target="_blank">PR #3614</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="contribution-tags">
+
+                        <div class="chips" style="margin-bottom: 20px;">
                             <span>Java</span>
                             <span>Distributed Systems</span>
                         </div>
-                        <a href="https://github.com/apache/cassandra" target="_blank" class="view-link">View Repository ></a>
-                    </div>
-                </div>
 
-                    <div class="contribution-card">
-                        <div class="contribution-icon">
-                            <i class="ri-git-pull-request-line"></i>
-                        </div>
-                        <h3>Apache Kafka</h3>
-                        <div class="glass-card">
-                            <p>Involved in improving the distributed event streaming platform.</p>
+                        <a href="https://github.com/apache/cassandra" target="_blank" class="os-link"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+
+                    <div class="os-card">
+                        <h3><i class="devicon-apachekafka-original colored"></i> Apache Kafka</h3>
+                        <p>Involved in improving the distributed event streaming platform.</p>
+                        
                         <div class="pr-links">
-                            <h4>Pull Requests:</h4>
+                            <h4>Pull Requests</h4>
                             <ul>
                                 <li>
-                                    <i class="ri-git-pull-request-line"></i>
-                                    <a href="https://github.com/apache/kafka/pull/22033" target="_blank"> PR #22033</a>
+                                    <i class="fas fa-code-pull-request" style="color: #10b981;"></i>
+                                    <a href="https://github.com/apache/kafka/pull/22033" target="_blank">PR #22033</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="contribution-tags">
+
+                        <div class="chips" style="margin-bottom: 20px;">
                             <span>Java</span>
                             <span>Streaming</span>
                         </div>
-                        <a href="https://github.com/apache/kafka" target="_blank" class="view-link">View Repository ></a>
-                    </div>
+
+                        <a href="https://github.com/apache/kafka" target="_blank" class="os-link"><i class="fab fa-github"></i> View Repository</a>
                     </div>
                 </div>
             </div>
-        </section>
-            
         </section>
 
         <section id="personal">
